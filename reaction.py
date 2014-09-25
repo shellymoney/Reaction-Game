@@ -12,15 +12,16 @@ GPIO.setup(led, GPIO.OUT)
 GPIO.setup(button, GPIO.IN)
 
 GPIO.output(led, 0)
-while GPIO.input(button):
-	pass
-if GPIO.input(button) == False:
-	print "Button pressed"
 
 #pausing for a random time between 5 and 10 sec
 time.sleep(random.uniform(5, 10))
 
 GPIO.output(led, 1)
+
+while GPIO.input(button):
+	pass
+if GPIO.input(button) == False:
+	print "Button pressed"
 
 time.sleep(2)
 
